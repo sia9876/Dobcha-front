@@ -1,6 +1,6 @@
 import React from  'react'
 import './Login.css';
-import { Divider,Form, Input, Button, Checkbox } from 'antd';
+import { Divider, Input, Button, Checkbox } from 'antd';
 import { BankFilled ,LockFilled} from '@ant-design/icons';
 import logo from '../images/dobcha_logo.png'
 //import line from '../images/line.png'
@@ -38,25 +38,21 @@ const Login=({location,history}) => {
                         </div>
                         </div>
 
-                        <div className="cc">
-                            <div className="cc1">
+                        <div className="cc">   
                             <Checkbox onChange={onChange}>자동 로그인</Checkbox>
-                            </div>
-                            <div className="cc2">
                             <a onClick={() => {history.push('/login/Finding_ip')}} style={{color:'#000000'}}>
                                 ID/PW 찾기
                             </a>
-                            </div>
                         </div>
                         
                         <Button type='primary' onClick={() => {
                             history.push('/')}} 
-                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginLeft:'40px',marginRight:'40px',marginBottom:'10px'
+                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginTop:'10px', marginLeft: '20px'
                             , border:'none',borderRadius:'5px'}}> 로그인</Button>
 
                         <Button type='primary' onClick={() => {
                             history.push('/')}} 
-                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginLeft:'40px',marginRight:'40px'
+                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center', marginLeft: '20px',marginTop:'8px'
                             , border:'none',borderRadius:'5px'}}> 기관 회원가입</Button>
                        
                         {/* 기관 버튼부분 링크 바꾸기!!
@@ -82,25 +78,20 @@ const Login=({location,history}) => {
                         </div>
 
                         <div className="ccc">
-                            <div className="ccc1">
                             <Checkbox onChange={onChange}>자동 로그인</Checkbox>
-                            
-                            </div>
-                            <div className="ccc2">
                             <a onClick={() => {history.push('/login/Finding_ip')}} style={{color:'#000000'}}>
                                 ID/PW 찾기
                             </a>
-                            </div>
                         </div>
                         
                         <Button type='primary' onClick={() => {
                             history.push('/')}} 
-                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginLeft:'40px',marginRight:'40px',marginBottom:'10px'
+                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginTop:'10px', marginLeft: '20px'
                             , border:'none',borderRadius:'5px'}}> 로그인</Button>
 
                         <Button type='primary' onClick={() => {
                             history.push('/')}} 
-                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginLeft:'40px',marginRight:'40px'
+                            style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginTop:'8px', marginLeft: '20px'
                             , border:'none',borderRadius:'5px'}}> 개인 회원가입</Button>
                        
                         {/* 개인 버튼부분 링크 바꾸기!!
@@ -111,8 +102,8 @@ const Login=({location,history}) => {
 
                 </div>
 
-               
-                    <div style={{float:'right', marginTop:'30px'}}>
+                </div>
+                <div className="bottom">
                     <a herf = "#" style={{color:'#8c8c8c'}}>돕차 소개</a>
                     <Divider type="vertical"/>
                     <a herf = "#" style={{color:'#8c8c8c'}}>돕차 이용 약관</a>
@@ -120,7 +111,6 @@ const Login=({location,history}) => {
                     <a herf = "#" style={{color:'#8c8c8c'}}>개인정보 처리 방침 </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   Dobcha ©2021
                     </div>
-                </div>
             </div>
         
         </div>

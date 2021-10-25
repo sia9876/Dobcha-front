@@ -3,15 +3,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
 }
 
 .loginWrapper{
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
-    background-color:white;
-    height: 590px;
-    width: 1100px;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 1300px;
     padding: 20px;
 }
 .top{
@@ -19,23 +20,27 @@
     height:70px;
     width:auto;
     justify-content: center;
-    background-color: white;
     margin-bottom: 15px;
 }
 .middle{
+    display: flex;
     padding:20px;
-    width: auto;
+    width: 1000px;
+    border:2px solid black;
+    flex-direction: row;
+    justify-content: space-between;
     height: 465px;
+    padding-left: 20px;
+    padding:10px;
 }
 .middle_left{
     display: flex;
-    float:left;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
     width:400px;
     height: 400px;
-    padding-left: 20px;
-    border:2px solid black;
-    padding:10px;
-    flex-direction: column;
 }
 .title{
     display: flex;
@@ -44,14 +49,14 @@
     padding:2px;
     width: auto;
     flex-direction: column;
-    margin-top: 50px;
     margin-bottom: 20px;
     align-items: center;
 }
 .aa{
     display: flex;
     flex-direction: row;
-   
+    justify-content: space-between;
+    align-items: center;justify-items: center;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -59,83 +64,74 @@
 }
 .aa1{
     display: flex;
- 
     width: fit-content;
     height: fit-content;
-    margin-top: 10px;
 }
 .aa2{
     display: flex;
-   
     margin-left: 8px;
-    width: 350px;
+    width: 300px;
     height: fit-content;
 }
 
 .bb{
     display: flex;
     flex-direction: row;
-  
-
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 3px;
 }
 .bb1{
     display: flex;
-   
     width: fit-content;
     height: fit-content;
-    margin-top: 10px;
 }
 .bb2{
     display: flex;
- 
     margin-left: 8px;
-    width: 350px;
+    width: 300px;
     height: fit-content;
 }
 
 .cc{
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    height: auto;
     margin-top: 8px;
     margin-left: 20px;
-    margin-right: 20px;
     margin-bottom: 10px;
 }
-.cc1{
-    display: flex;
-   
-    float: left;
-}
-.cc2{
-    display: flex;
-   
-    float: right;
-}
-
 
 .middle_right{
     display: flex;
-    float: right;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
     width:400px;
     height: 400px;
     
-    flex-direction: column;
 }
 .title1{
     display: flex;
     font-size: 17px;
+    font-weight: bold;
     padding:2px;
-    font-weight :bold;
     width: auto;
     flex-direction: column;
-    margin-top: 50px;
     margin-bottom: 20px;
     align-items: center;
 }
 .aaa{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;justify-items: center;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -145,49 +141,51 @@
     display: flex;
     width: fit-content;
     height: fit-content;
-    margin-top: 10px;
 }
 .aaa2{
     display: flex;
     margin-left: 8px;
-    width: 350px;
+    width: 300px;
     height: fit-content;
 }
 
 .bbb{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
     margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 3px;
     margin-right: 20px;
 }
 .bbb1{
     display: flex;
-  
     width: fit-content;
     height: fit-content;
-    margin-top: 10px;
 }
 .bbb2{
     display: flex;
     margin-left: 8px;
-    width: 350px;
+    width: 300px;
     height: fit-content;
 }
 
 .ccc{
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    height: auto;
     margin-top: 8px;
     margin-left: 20px;
-    margin-right: 20px;
     margin-bottom: 10px;
 }
-.ccc1{
-    display: flex;
-    float: left;
-}
-.ccc2{
-    display: flex;
-    float: right;
+
+
+.bottom{
+    margin-top: 30px;
 }
 
 
