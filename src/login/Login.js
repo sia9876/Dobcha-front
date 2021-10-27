@@ -1,17 +1,34 @@
 import React from  'react'
 import './Login.css';
-import { Divider, Input, Button, Checkbox } from 'antd';
+import { Divider, Input, Button, Checkbox, message } from 'antd';
 import { BankFilled ,LockFilled} from '@ant-design/icons';
 import logo from '../images/dobcha_logo.png'
 //import line from '../images/line.png'
 
 
 
-const Login=({location,history}) => {
+const Login=({history}) => {
     function onChange(e) {
         console.log(`checked = ${e.target.checked}`);
       }
-    
+
+      const [key, setKey] = React.useState('')
+      const [key1, setKey1] = React.useState('')
+
+      const handleLogin = () => {
+          key === whiteList.id ? history.push('../'): message.error('등록되지 않은 기관입니다.')
+      }
+    const whiteList = {
+        id:'test'
+    } /* id는 임의로 적은 거라 백앤드 할 때 dB랑 연동해주세요~~*/
+
+    const handleLogin2 = () => {
+        key === whiteList2.id ? history.push('../'): message.error('등록되지 않은 사용자입니다.')
+    }
+    const whiteList2 ={
+        id: 'user1'
+    }
+     /* id는 임의로 적은 거라 백앤드 할 때 dB랑 연동해주세요~~*/
     
     return(
         <div className ='container'>
@@ -28,7 +45,14 @@ const Login=({location,history}) => {
                         <div className="aa">
                         <div className="aa1">{<BankFilled />}</div>
                         <div className="aa2">
-                        <Input placeholder="ID" />
+                        <Input placeholder="ID" 
+                        onChange={(e) => {
+                            setKey(e.target.value)
+                        }}
+                        className='keyBox1'
+                        maxLength='10'
+                        style={{padding: 10}}
+                        />
                         </div>
                         </div>
                         <div className="bb">
@@ -45,8 +69,7 @@ const Login=({location,history}) => {
                             </a>
                         </div>
                         
-                        <Button type='primary' onClick={() => {
-                            history.push('/')}} 
+                        <Button type='primary' disabled = {key?.length === 0} onClick={(handleLogin)}
                             style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginTop:'10px', marginLeft: '20px'
                             , border:'none',borderRadius:'5px'}}> 로그인</Button>
 
@@ -67,7 +90,14 @@ const Login=({location,history}) => {
                         <div className="aaa">
                         <div className="aaa1">{<BankFilled />}</div>
                         <div className="aaa2">
-                        <Input placeholder="ID" />
+                        <Input placeholder="ID" 
+                        onChange={(e) => {
+                            setKey1(e.target.value)
+                        }}
+                        className='keyBox'
+                        maxLength='10'
+                        style={{padding: 10}}
+                        />
                         </div>
                         </div>
                         <div className="bbb">
@@ -84,8 +114,7 @@ const Login=({location,history}) => {
                             </a>
                         </div>
                         
-                        <Button type='primary' onClick={() => {
-                            history.push('/')}} 
+                        <Button type='primary'  disabled = {key1?.length === 0} onClick={handleLogin2}
                             style={{display:'flex',width: '300px', height: 'auto', justifyContent: 'center',marginTop:'10px', marginLeft: '20px'
                             , border:'none',borderRadius:'5px'}}> 로그인</Button>
 
