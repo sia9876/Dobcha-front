@@ -53,7 +53,7 @@ const Login=({history}) => {
                         }}
                         className='keyBox1'
                         maxLength='10'
-                        style={{padding: 20}}
+                        style={{padding: 10}}
                         />
                         </div>
                         </div>

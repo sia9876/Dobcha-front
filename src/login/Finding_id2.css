@@ -1,11 +1,11 @@
-.frame{
+.frame2{
     display: flex;
     flex-direction: column;
     padding:30px;
 }
 
 
-.top2{
+.top3{
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
@@ -13,107 +13,77 @@
     
 }
 
-.click{
+.click1{
     display: flex;
     justify-content: space-around;
     
 }
-.btn{
+.btn1{
     display: flex;
     flex-direction: row;
 }
 
-.middle2{
+
+.middle3{
     display: flex;
     flex-direction: column;
     font-size: 15px;
     font-weight: bold;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
     margin-bottom: 30px;
     margin-left: 95px;
     margin-right: 95px;
 }
 
-.middle_IP{
+.middle_IP2{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
     margin-left: 10px;
 }
 
-.middle_Box{
+.middle_Box2{
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    margin-top: 20px;
-    padding: 20px;
     background-color: #F9F9F9;
-}
-
-.middle_BoxH{
-    display: flex;
-    margin-top: 15px;
-
-}
-.virtual_Box{
-    display: flex;
+    width:500px;
+    height: 300px;
     justify-content: center;
-   
-    align-items: center;
-    flex-direction: column;
-    width: 600;
-    height: 500;
-
-}
-
-.middle_BoxN{
-    display: flex;
-    flex-direction: row;
-   
     margin-top: 20px;
-    float: right;
+    padding: 50px;
+    white-space: pre-wrap;
+}
+.text{
+    display: flex;
+    margin-left: 100px;
     
-}
 
-.middle_BoxE{
+}
+.text2{
     display: flex;
     flex-direction: row;
-    float: right;
- 
-    margin-top: 15px;
-    margin-right: 5px;
-    margin-left: 20px;
+    align-items: center;
 }
-
-.middle_BoxT{
-    display: flex;
-    flex-direction: row;
-    float: right;
- 
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.middle_BoxB{
+.btn2{
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 50px;
+    align-items: center;
+    font-weight: bold;
+
+
+
 }
 
 
 
-.bottom2{
+
+.bottom3{
     display: flex;
     justify-content: center;
     align-content: center;
     margin-top: 50px;
 } 
-
-
-
-
-
-
-
-
-
