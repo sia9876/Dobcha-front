@@ -3,7 +3,7 @@ import './Login.css';
 import { Divider, Input, Button, Checkbox, message } from 'antd';
 import { BankFilled ,LockFilled} from '@ant-design/icons';
 import logo from '../images/dobcha_logo.png'
-//import line from '../images/line.png'
+
 
 
 
@@ -17,25 +17,27 @@ const Login=({history}) => {
 
       const handleLogin = () => {
           key === whiteList.id ? history.push('../'): message.error('등록되지 않은 기관입니다.')
-      }
+      } /* 이동 링크 바꾸기 로그인: 기관 로그인 시 나오는 페이지(Agency)*/
     const whiteList = {
         id:'test'
     } /* id는 임의로 적은 거라 백앤드 할 때 dB랑 연동해주세요~~*/
 
     const handleLogin2 = () => {
         key === whiteList2.id ? history.push('../'): message.error('등록되지 않은 사용자입니다.')
-    }
+    }/* 이동 링크 바꾸기 로그인: 로그인: 개인 로그인 시 나오는 페이지(Individual)*/
+
     const whiteList2 ={
         id: 'user1'
     }
-     /* id는 임의로 적은 거라 백앤드 할 때 dB랑 연동해주세요~~*/
+     /* id는 임의로 적은 거라 백앤드 할 때 dB랑 연동해주세요~~😃 */
     
     return(
         <div className ='container'>
             <div className='loginWrapper'>
                 <div className='top'>
                     {/* 로고 버튼 클릭 시 홈 화면으로 이동 */}
-                    <button ><img src={logo} alt ="dobcha_logo" 
+                    <button style={{border:'none'}}
+                    ><img src={logo} alt ="dobcha_logo" 
                     onClick ={( )=> {history.push('/')}}
                     /></button>
                 </div>
@@ -51,7 +53,7 @@ const Login=({history}) => {
                         }}
                         className='keyBox1'
                         maxLength='10'
-                        style={{padding: 10}}
+                        style={{padding: 20}}
                         />
                         </div>
                         </div>
@@ -64,7 +66,7 @@ const Login=({history}) => {
 
                         <div className="cc">   
                             <Checkbox onChange={onChange}>자동 로그인</Checkbox>
-                            <a onClick={() => {history.push('/login/Finding_ip')}} style={{color:'#000000'}}>
+                            <a onClick={() => {history.push('/login/Finding_id')}} style={{color:'#000000'}}>
                                 ID/PW 찾기
                             </a>
                         </div>
@@ -109,7 +111,7 @@ const Login=({history}) => {
 
                         <div className="ccc">
                             <Checkbox onChange={onChange}>자동 로그인</Checkbox>
-                            <a onClick={() => {history.push('/login/Finding_ip')}} style={{color:'#000000'}}>
+                            <a onClick={() => {history.push('/login/Finding_id')}} style={{color:'#000000'}}>
                                 ID/PW 찾기
                             </a>
                         </div>
