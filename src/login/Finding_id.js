@@ -101,16 +101,19 @@ const Finding_id=({history, mm,ss})=>{
                     <div className='middle_BoxH'>
                         회원 정보에 등록한 이름과 이메일을 입력해주세요.
                     </div>
-<div className='virtual_Box'>
+
+                <div className='virtual_Box'>
                     <div className='middle_BoxN'>
+                      <div className='middle_BoxNtext' style={{marginRight:'25px',alignContent:'center'}}>
                         이름
+                        </div>
                         <Input placeholder=" " 
-                        style={{width:'350px', height:'30px', marginLeft:'15px'}}
+                        style={{width:'265px', height:'30px', marginRight:'122px'}}
                         />
                     </div>
 
                     <div className='middle_BoxE'>
-                        <div  style={{marginRight:'10px'}}>이메일</div>
+                        <div  style={{marginRight:'20px', marginLeft:'57px'}}>이메일</div>
                         
                         <Input placeholder=" " 
                         style={{width:'120px', height:'30px'}}
@@ -122,19 +125,19 @@ const Finding_id=({history, mm,ss})=>{
                             <Space wrap>
                             <Dropdown overlay={menu} placement="bottomLeft"
                             >
-                                <Button style={{marginLeft:'10px'}}>직접입력</Button>
+                                <Button style={{marginLeft:'10px', width:'80px', height:'30px', alignItems:'center',borderRadius:'5px'}}>직접입력</Button>
                             </Dropdown>
                             </Space>
                             </Space>
 
                             <Button block
-                            style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
-                            , marginLeft:'15px'}}
+                            style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center',alignItems:'center'
+                            , marginLeft:'10px',borderRadius:'5px'}}
                             >인증번호 받기</Button>
                     </div>
                     <div className='middle_BoxT'>
                     <Input placeholder=" " 
-                        style={{width:'350px', height:'30px', marginLeft:'15px', marginRight:'15px'}}
+                        style={{width:'270px', height:'30px', marginLeft:'15px', marginRight:'15px'}}
                         />
                         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
                     </div>
@@ -142,10 +145,10 @@ const Finding_id=({history, mm,ss})=>{
                     </div>
 
                     <div className='middle_BoxB'>
-                    <Button block
+                    <Button bold
                     onClick={()=> {history.push('./Finding_id2')}}
                             style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
-                            , marginLeft:'15px'}}
+                            , marginRight:'65px',borderRadius:'5px'}}
                             >확인</Button>
                     </div>
                     

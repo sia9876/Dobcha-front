@@ -1,29 +1,27 @@
-.frame{
+.frame4{
     display: flex;
     flex-direction: column;
     padding:30px;
 }
 
-
-.top2{
+.top5{
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
     justify-content: space-around;
-    
 }
 
-.click{
+.click3{
     display: flex;
     justify-content: space-around;
     
 }
-.btn{
+.btn3{
     display: flex;
     flex-direction: row;
 }
 
-.middle2{
+.middle5{
     display: flex;
     flex-direction: column;
     font-size: 15px;
@@ -34,14 +32,14 @@
     margin-right: 95px;
 }
 
-.middle_IP{
+.middle_IP4{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
     margin-left: 10px;
 }
 
-.middle_Box{
+.middle_Box4{
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -50,12 +48,12 @@
     background-color: #F9F9F9;
 }
 
-.middle_BoxH{
+.middle_BoxH3{
     display: flex;
     margin-top: 15px;
 
 }
-.virtual_Box{
+.virtual_Box3{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,52 +63,32 @@
 
 }
 
-.middle_BoxN{
+.middle_BoxP{
     display: flex;
     flex-direction: row;
-   
     margin-top: 20px;
+    align-items: center;
     float: right;
-    
 }
 
-.middle_BoxE{
+.middle_BoxPC{
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
-    margin-right: 5px;
-    margin-left: 20px;
-}
-
-.middle_BoxT{
-    display: flex;
-    flex-direction: row;
+    margin-top: 20px;
+    align-items: center;
     float: right;
- 
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
-.middle_BoxB{
+.middle_BoxB4{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-weight: bold;
 }
 
-
-
-.bottom2{
+.bottom5{
     display: flex;
     justify-content: center;
     align-content: center;
     margin-top: 50px;
-} 
-
-
-
-
-
-
-
-
-
+}

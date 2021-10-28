@@ -67,6 +67,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    align-items: center;
     float: right;
 }
 
@@ -74,6 +75,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    align-items: center;
     float: right;
 }
 
