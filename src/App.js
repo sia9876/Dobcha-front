@@ -4,6 +4,7 @@ import Login from './login/Login';
 import Main from './homepage/Main';
 import Finding_id from './login/Finding_id';
 import Finding_id2 from './login/Finding_id2';
+import Finding_pw from './login/Finding_pw';
 
 import 'antd/dist/antd.css';
 
@@ -16,6 +17,7 @@ const App = () => {
       <Route path ='/login/Login' exact component = {Login}/>
       <Route path ='/login/Finding_id' exact component = {Finding_id}/>
       <Route path ='/login/Finding_id2' exact component = {Finding_id2}/>
+      <Route path='/login/Finding_pw' exact component = {Finding_pw}/>
 
     </Router>
     </>

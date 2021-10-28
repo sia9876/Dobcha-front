@@ -1,18 +1,18 @@
 import React from 'react'
-import './Finding_id2.css';
+import './Finding_pw.css';
 import { Divider, Input, Button} from 'antd';
 import logo from '../images/dobcha_logo.png'
+import { render } from '@testing-library/react';
 
-
-const Finding_id2=({history}) => {
+const Finding_pw=({history}) => {
     return(
-        <div className='frame2'>
-            <div className='top3'>
+        <div className='frame3'>
+            <div className='top4'>
             <Button style={{ border:'none'}}
                 ><img src={logo} alt ="dobcha_logo" 
                         onClick ={( )=> {history.push('/')}}
                         /></Button>
-                    <div className='click1'>
+                 <div className='click2'>
                  <a onClick={() => {history.push('/')}} 
                  style={{padding:'15px', marginRight:'50px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
@@ -27,7 +27,7 @@ const Finding_id2=({history}) => {
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
                 }}> 플랫폼 소개  {/* 플랫폼 소개 페이지를 만들게 되면 경로 바꾸기*/} </a>
                                 </div>
-                                <div className='btn1'>
+                                <div className='btn2'>
                 <Button block 
                 style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
                 ,borderRadius:'5px', marginTop:'15px', marginRight:'15px'}}
@@ -40,62 +40,74 @@ const Finding_id2=({history}) => {
                 >회원가입 </Button>{/* 회원가입 페이지로 경로 바꾸기*/}
                 </div>
             </div>
-
             <Divider/>
+  
 
-            <div className='middle3'>
+            <div className='middle4'>
             계정 정보 찾기 
 
-            <div className='middle_IP2'>
-                <a onClick={() => {history.push('./Finding_id')}}
-                style={{color:'red'}} >아이디 찾기</a>
-                    <Divider type="vertical" style={{marginTop:'5px'}}/>
-                <a onClick={() => {history.push('./Finding_pw')}}
-                style={{color:'black'}}>비밀번호 찾기</a>
-            </div>
-
-            <div className='middle_Box2' >
-                <div className='text1'>
-                당신의 아이디는 <br/>  </div>
-                <div className='text2'>
-                {/*아이디 &nbsp;*/} 
-                <Input type='text' placeholder=" "style={{width:'300px', height:'33px'}} />
-                &nbsp; 입니다. {/*  DB연동이 완료되면 input 받지 말고 텍스트만 뜨게끔 바꾸기   */} 
+            <div className='middle_IP3'>
+                    <a onClick={() => {history.push('./Finding_id')}}
+                    style={{color:'black'}} >아이디 찾기</a>
+                        <Divider type="vertical" style={{marginTop:'5px'}}/>
+                    <a onClick={() => {history.push('./Finding_pw')}}
+                    style={{color:'red'}}>비밀번호 찾기</a>
                 </div>
-                <div className='middle_BoxB2'>
-                <Button type = "bold"
-                    onClick={()=> {history.push('./Login')}}
-                            style={{display:'flex',width: '130px', height: '30px', justifyContent: 'center'
+                <div className='middle_Box3'>
+                    <div className='middle_BoxH2'>
+                        당신의 이름과 아이디를 입력해주세요.
+                    </div>
+                    <div className='virtual_Box2'>
+
+                    <div className='middle_BoxN2'>
+                        이름
+                        <Input placeholder=" " 
+                        style={{width:'350px', height:'30px', marginLeft:'15px'}}
+                        />
+                    </div>
+
+                    <div className='middle_BoxI'>
+                        <div className='middle_BoxItext' style={{marginRight:'8px'}}>
+                        아이디
+                        </div>
+                        <Input placeholder=" " 
+                        style={{width:'350px', height:'30px'}}
+                        />
+                    </div>
+                    </div>
+                    
+
+                    <div className='middle_BoxB3'>
+                    <Button block
+                    onClick={()=> {history.push('./Finding_pw2')}}
+                            style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
                             , marginLeft:'15px'}}
-                            >  로그인 하러 가기 </Button>
+                            >확인</Button>
+                    </div>
+                    
+
                 </div>
 
+
+
+
             </div>
 
 
-            </div>
 
 
-
-
-            <div className='bottom3'>
+            <div className='bottom4'>
             <a herf = "#" style={{color:'#8c8c8c'}}>돕차 소개</a>
                     <Divider type="vertical"/>
                     <a herf = "#" style={{color:'#8c8c8c'}}>돕차 이용 약관</a>
                     <Divider type="vertical"/>
                     <a herf = "#" style={{color:'#8c8c8c'}}>개인정보 처리 방침 </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   Dobcha ©2021
-
             </div>
-        </div>
+    </div>
     )
-
-
-
 
 
 }
 
-
-
-export default Finding_id2;
+export default Finding_pw;

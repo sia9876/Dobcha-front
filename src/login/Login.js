@@ -36,10 +36,10 @@ const Login=({history}) => {
             <div className='loginWrapper'>
                 <div className='top'>
                     {/* 로고 버튼 클릭 시 홈 화면으로 이동 */}
-                    <button style={{border:'none'}}
+                    <Button style={{border:'none'}}
                     ><img src={logo} alt ="dobcha_logo" 
                     onClick ={( )=> {history.push('/')}}
-                    /></button>
+                    /></Button>
                 </div>
                 <div className='middle'>
                     <div className='middle_left'>

@@ -52,10 +52,10 @@ const Finding_id=({history, mm,ss})=>{
     return(
         <div className='frame'>
             <div className='top2'>
-                <button style={{ border:'none'}}
+                <Button style={{ border:'none'}}
                 ><img src={logo} alt ="dobcha_logo" 
                         onClick ={( )=> {history.push('/')}}
-                        /></button>
+                        /></Button>
                         <div className='click'>
                  <a onClick={() => {history.push('/')}} 
                  style={{padding:'15px', marginRight:'50px',
