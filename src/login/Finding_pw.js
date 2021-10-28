@@ -18,7 +18,7 @@ const Finding_pw=({history}) => {
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
                 }}> 기부  {/* 기부 페이지 생기면 경로 바꾸기*/} </a>
 
-                <a onClick={() => {history.push('/')}} 
+                <a onClick={() => {history.push('/hompage/Volunteer')}} 
                  style={{padding:'15px', marginRight:'30px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
                 }}> 봉사활동  {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기*/} </a>

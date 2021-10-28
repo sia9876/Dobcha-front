@@ -1,31 +1,23 @@
 //import React from  'react'
 import React, {useEffect, useState} from 'react'
 import './Finding_id.css';
-import { Divider, Input, Button, Menu, Dropdown,Space } from 'antd';
+import { Divider, Input, Button, Menu, Dropdown,Space,AutoComplete } from 'antd';
 import logo from '../images/dobcha_logo.png'
 
 
 const Finding_id=({history, mm,ss})=>{
 
-    const menu = (
-        <Menu>
-          <Menu.Item>
-            <a target="_blank"  >
-              google.com
-            </a>
-          </Menu.Item>
-          <Menu.Item>
-            <a target="_blank" >
-              naver.com
-            </a>
-          </Menu.Item>
-          <Menu.Item>
-            <a target="_blank" >
-              daum.net
-            </a>
-          </Menu.Item>
-        </Menu>
-      );
+  const options = [
+    {
+      value: 'gamil.com',
+    },
+    {
+      value: 'naver.com',
+    },
+    {
+      value: 'daum.net',
+    },
+  ];
 
         const [minutes, setMinutes] = useState(parseInt(mm));
         const [seconds, setSeconds] = useState(parseInt(ss));
@@ -62,7 +54,7 @@ const Finding_id=({history, mm,ss})=>{
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
                 }}> 기부  {/* 기부 페이지 생기면 경로 바꾸기*/} </a>
 
-                <a onClick={() => {history.push('/')}} 
+                <a onClick={() => {history.push('/hompage/Volunteer')}} 
                  style={{padding:'15px', marginRight:'30px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
                 }}> 봉사활동  {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기*/} </a>
@@ -113,26 +105,27 @@ const Finding_id=({history, mm,ss})=>{
                     </div>
 
                     <div className='middle_BoxE'>
-                        <div  style={{marginRight:'20px', marginLeft:'57px'}}>이메일</div>
+                        <div  style={{marginRight:'20px'}}>이메일</div>
                         
                         <Input placeholder=" " 
                         style={{width:'120px', height:'30px'}}
                         /> &nbsp; @ &nbsp;
-                        <Input placeholder="  " 
-                        style={{width:'120px', height:'30px'}}/>
+                        
 
-                        <Space direction="vertical">
-                            <Space wrap>
-                            <Dropdown overlay={menu} placement="bottomLeft"
-                            >
-                                <Button style={{marginLeft:'10px', width:'80px', height:'30px', alignItems:'center',borderRadius:'5px'}}>직접입력</Button>
-                            </Dropdown>
-                            </Space>
-                            </Space>
+                        <AutoComplete
+                            style={{
+                              width: 120, height:30
+                            }}
+                            options={options}
+                            placeholder="직접입력"
+                            filterOption={(inputValue, option) =>
+                              option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                            }
+                          />                     
 
                             <Button block
                             style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center',alignItems:'center'
-                            , marginLeft:'10px',borderRadius:'5px'}}
+                            , marginLeft:'10px',borderRadius:'5px',marginRight:'30px'}}
                             >인증번호 받기</Button>
                     </div>
                     <div className='middle_BoxT'>
