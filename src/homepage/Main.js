@@ -53,8 +53,8 @@ const Main=({history}) => {
                     <Button block 
                     style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
                     ,borderRadius:'5px', marginTop:'15px'}}
-                    onClick={()=> {history.push('/')}}
-                    >회원가입 </Button>{/* 회원가입 페이지로 경로 바꾸기*/}
+                    onClick={()=> {history.push('/registration/Registration')}}
+                    >회원가입</Button>
                 </div>
             </div>
             <Divider/>
