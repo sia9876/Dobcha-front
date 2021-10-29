@@ -2,10 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./Registration.css";
-import {Divider, Button, Steps} from "antd";
+import {Divider, Button} from "antd";
 import logo from '../images/dobcha_logo.png'
 
-const {Step} = Steps;
 const Registration = ({history}) => {
 
     return (
@@ -101,15 +100,16 @@ const Registration = ({history}) => {
             </div>
             <Divider/>
 
-            <div className="content">
-              <div className="step">
-                <Steps>
-                    <Step title="회원 구분 선택" />
-                    <Step style= {{paddingRight:'20px',paddingLeft:'50px'}} title="정보 입력"/>
-                    <Step title="회원 가입 완료"/>
-                </Steps>
-            </div>
+            
+                <div className="step">
+                    <div className="step1"><h1>회원 구분 선택</h1></div>
+                    <Divider type="vertical"/>
+                    <div className="step2"><h1>회원 정보 입력</h1></div>
+                    <Divider type="vertical"/>
+                    <div className="step3"><h1>회원 가입 완료</h1></div>
+                </div>
             <Divider/>
+            <div className="content">
             <div className="ag">
                 <div className="in">
                 <Button style={{
@@ -137,8 +137,9 @@ const Registration = ({history}) => {
                 </div>
             </div>
             </div>
+            
             <div className="bottom">
-            <a herf="#" style={{
+                <a herf="#" style={{
                     color: "#8c8c8c"
                 }}>
                 돕차 소개
@@ -154,10 +155,9 @@ const Registration = ({history}) => {
                     color: "#8c8c8c"
                 }}>
                 개인정보 처리 방침 
-            </a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Dobcha ©2021
+            </a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dobcha ©2021
 
-        </div>
+            </div>
         </div>
     )
 }

@@ -1,44 +1,38 @@
-import React from "react";
+
 import ReactDOM from "react-dom";
+import React, {useEffect, useState} from 'react'
 import "antd/dist/antd.css";
 import "./Agency_R.css";
-import { Layout, Divider, Button, Steps } from "antd";
-import { Form, Input, InputNumber, Select, Checkbox } from 'antd';
+import { Divider, Button } from "antd";
+import { Form, Input, InputNumber, Select, Checkbox, AutoComplete } from 'antd';
 import logo from '../images/dobcha_logo.png'
-import Item from "antd/lib/list/Item";
 
-const { Header, Footer, Content } = Layout;
-const {Step} = Steps;
-const steps = [
-    {
-      title: 'First',
-      content: 'First-content',
-    },
-    {
-      title: 'Second',
-      content: 'Second-content',
-    },
-    {
-      title: 'Last',
-      content: 'Last-content',
-    },
-  ];
-  
 
 
 const Agency_R =({history}) => {
-    const [current, setCurrent] = React.useState(0);
+  
+ 
+  const [form] = Form.useForm();
 
-  const next = () => {
-    setCurrent(current + 1);
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
   };
 
-  const prev = () => {
-    setCurrent(current - 1);
-  };    
- 
+  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+
+  const onWebsiteChange = (value) => {
+    if (!value) {
+      setAutoCompleteResult([]);
+    } else {
+      setAutoCompleteResult(['.com', '.net', '.co.kr'].map((domain) => `${value}${domain}`));
+    }
+  };
+
+  const websiteOptions = autoCompleteResult.map((website) => ({
+    label: website,
+    value: website,
+  }));
     return(
-    
         <div className="frame">
             <div className="top2">
                 <Button style={{ border: "none" }}><img src={logo} alt="dobcha_logo"
@@ -129,37 +123,146 @@ const Agency_R =({history}) => {
                 </div>
             </div>
             <Divider />
-            <h2> 기관 회원 가입</h2>
+
             <div className="content">
-                <div className="step"><>
-                    <Steps current={current}>
-                        {steps.map(item => (<Step key={Item.title} title={Item.title} />
-                        ))}
-                    </Steps>
-                    <div className="steps-conent">{steps[current].content}</div>
-                    <div className="steps-action">
+                <div className="step"></div>
+                <Divider />
+                <Form
+                    form={form}
+                    name="register"
+                    onFinish={onFinish}
+                    scrollToFirstError
+                >
+                <div className="form">
+                    <div className="in">
+                
+                        < Form.Item
+                            name="e-mail"
+                            label="E-Mail"
+                            rules={[
+                        {
+                            type: 'email',
+                            message: '이메일을 입력하세요',
+                        },
+                        {
+                            required: true,
+                            message: '이메일을 입력하시오.',
+                        },
+                        ]}
+                        >
+                        <Input />
+                        <Form.Item
+                            name="password"
+                            label="비밀번호"
+                            rules={[
+                            {
+                                required: true,
+                                message: '비밀번호를 입력하시오.',
+                            },
+                            ]}
+                            hasFeedback
+                        >
+                        <Input.Password />
+                    </Form.Item>
 
-                        {current < steps.length - 1 && (
-                            <Button type="primary" onClick={() => next()}>
-                                Next
-                            </Button>
-                        )} {current === steps.length - 1 && (
-                            <Button type="primary" onClick={() => {history.push("/")}}>
-                                Done
-                            </Button>
-                        )} {current > 0 && (
-                            <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-                            Previous
-                            </Button>
-                        )}
-                </div>
-                </>
+                    <Form.Item
+                        name="confirm"
+                        label="비밀번호 확인"
+                        dependencies={['password']}
+                        hasFeedback
+                        rules={[
+                        {
+                            required: true,
+                            message: '비밀번호 확인을 진행하십시오.',
+                        },
+                        ({ getFieldValue }) => ({
+                            validator(_, value) {
+                            if (!value || getFieldValue('password') === value) {
+                                return Promise.resolve();
+                            }
+
+                            return Promise.reject(new Error('비밀번호가 일치하지 않습니다.'));
+                            },
+                        }),
+                        ]}
+                    >
+                    <Input.Password />
+                    </Form.Item>
+                    <Form.Item
+                        name="Agency_Name"
+                        label="단체(법인)명"
+                        rules={[
+                        {
+                            required: true,
+                            message: '단체명을 입력하십시오.',
+                            whitespace: true,
+                        },
+                        ]}
+                    >
+                        <Input />
+                    </Form.Item>
+                    <Form.Item
+                        name="phone"
+                        label="전화번호"
+                        rules={[
+                        {
+                            required: true,
+                            message: '전화번호를 입력하세요',
+                        },
+                        ]}
+                    >
+                        <Input
+                        style={{
+                            width: '100%',
+                        }}
+                        />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="website"
+                        label="Website"
+                        rules={[
+                        {
+                            required: true,
+                            message: '단체(법인) 사이트를 입력하세요',
+                        },
+                        ]}
+                    >
+                        <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
+                        <Input />
+                        </AutoComplete>
+                    </Form.Item>
+                    
+                    <Form.Item
+                        name="agreement"
+                        valuePropName="checked"
+                        rules={[
+                        {
+                            validator: (_, value) =>
+                            value ? Promise.resolve() : Promise.reject(new Error('이용약관에 동의해주십시오.')),
+                        },
+                        ]}
+                    
+                    >
+                        <Checkbox>
+                        <a href="">  Dobcha의 이용약관 및 개인정보 수집, 이용에 동의 </a>합니다.
+                        </Checkbox>
+                    </Form.Item>
+                    
+                    
+                    <Form.Item >
+                        <Button type="primary" htmlType="submit"
+                        onClick={()=>{history.push("/registration/R_Done")}}>
+                        가입하기
+                        </Button>
+                    </Form.Item>
+                    </Form.Item>
+                    
+                    </div>
+                    </div>
+            </Form>
             </div>
-            <Divider />
-            <div className="signupForm">
-
-            </div>
-
+           
             
         
         
@@ -175,12 +278,13 @@ const Agency_R =({history}) => {
                 <a herf="#" style={{ color: "#8c8c8c" }}>
                     개인정보 처리 방침
                 </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dobcha ©2021
-                </div>
             </div>
+        
+        </div>
             
-      </div>           
+                 
         
     );
     
-                        }                  
+}                 
 export default Agency_R;
