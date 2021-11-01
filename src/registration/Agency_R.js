@@ -5,7 +5,8 @@ import "antd/dist/antd.css";
 import "./Agency_R.css";
 import { Divider, Button } from "antd";
 import { Form, Input, InputNumber, Select, Checkbox, AutoComplete } from 'antd';
-import logo from '../images/dobcha_logo.png'
+import logo from '../images/dobcha_logo.png';
+
 
 
 
