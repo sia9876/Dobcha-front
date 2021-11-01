@@ -1,10 +1,16 @@
 import React from 'react'
 import './Finding_pw.css';
-import { Divider, Input, Button} from 'antd';
+import { Divider, Input, Button , Dropdown, Menu} from 'antd';
 import logo from '../images/dobcha_logo.png'
 
 
+
 const Finding_pw=({history}) => {
+
+
+   
+
+
     return(
         <div className='frame3'>
             <div className='top4'>
@@ -13,19 +19,20 @@ const Finding_pw=({history}) => {
                         onClick ={( )=> {history.push('/')}}
                         /></Button>
                  <div className='click2'>
-                 <a onClick={() => {history.push('/')}} 
-                 style={{padding:'15px', marginRight:'50px',
+                 <a onClick={() => {history.push('/login/Login')}} 
+                 style={{padding:'10px', marginRight:'20px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 기부  {/* 기부 페이지 생기면 경로 바꾸기*/} </a>
-
-                <a onClick={() => {history.push('/hompage/Volunteer')}} 
-                 style={{padding:'15px', marginRight:'30px',
-                     color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 봉사활동  {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기*/} </a>
+                }}> 기부  {/* 기부 페이지로 경로 바꾸기*/} </a>
                 <a onClick={() => {history.push('/')}} 
-                 style={{padding:'15px',marginLeft:'20px',
+                 style={{padding:'10px',marginLeft:'20px',marginRight:'20px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 플랫폼 소개  {/* 플랫폼 소개 페이지를 만들게 되면 경로 바꾸기*/} </a>
+                }}> 진행중인 기부  {/* 진행중인 기부 페이지로 경로 바꾸기*/} </a>
+
+                 
+                <a onClick={() => {history.push('/')}} 
+                 style={{padding:'10px', marginRight:'20px',marginLeft:'20px',
+                     color:'#000000' , fontSize:'17px', fontWeight:'bold' 
+                }}> 마감된 기부 {/* 마감된 기부 페이지로 경로 바꾸기*/} </a>
                                 </div>
                                 <div className='btn2'>
                 <Button block 

@@ -129,7 +129,7 @@ const Registration = ({history}) => {
                     }}>
                         <a
                             onClick={() => {
-                                history.push("/registration/Indiviual_R");
+                                history.push("/registration/Individual_R");
                             }}>
                             <h1>개인 회원가입 하기</h1></a>
 

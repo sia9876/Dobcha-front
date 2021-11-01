@@ -1,11 +1,14 @@
 //import React from  'react'
 import React, {useEffect, useState} from 'react'
 import './Finding_id.css';
-import { Divider, Input, Button, Menu, Dropdown,Space,AutoComplete } from 'antd';
+import { Divider, Input, Button, Menu, Dropdown,AutoComplete } from 'antd';
 import logo from '../images/dobcha_logo.png'
 
 
+
 const Finding_id=({history, mm,ss})=>{
+
+  
 
   const options = [
     {
@@ -48,20 +51,23 @@ const Finding_id=({history, mm,ss})=>{
                 ><img src={logo} alt ="dobcha_logo" 
                         onClick ={( )=> {history.push('/')}}
                         /></Button>
-                        <div className='click'>
-                 <a onClick={() => {history.push('/')}} 
-                 style={{padding:'15px', marginRight:'50px',
-                     color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 기부  {/* 기부 페이지 생기면 경로 바꾸기*/} </a>
 
-                <a onClick={() => {history.push('/hompage/Volunteer')}} 
-                 style={{padding:'15px', marginRight:'30px',
+
+                        <div className='click'>
+                        <a onClick={() => {history.push('/login/Login')}} 
+                 style={{padding:'10px', marginRight:'20px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 봉사활동  {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기*/} </a>
+                }}> 기부  {/* 기부 페이지로 경로 바꾸기*/} </a>
                 <a onClick={() => {history.push('/')}} 
-                 style={{padding:'15px',marginLeft:'20px',
+                 style={{padding:'10px',marginLeft:'20px',marginRight:'20px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 플랫폼 소개  {/* 플랫폼 소개 페이지를 만들게 되면 경로 바꾸기*/} </a>
+                }}> 진행중인 기부  {/* 진행중인 기부 페이지로 경로 바꾸기*/} </a>
+
+                 
+                <a onClick={() => {history.push('/')}} 
+                 style={{padding:'10px', marginRight:'20px',marginLeft:'20px',
+                     color:'#000000' , fontSize:'17px', fontWeight:'bold' 
+                }}> 마감된 기부 {/* 마감된 기부 페이지로 경로 바꾸기*/} </a>
                                 </div>
                 <div className='btn'>
                 <Button block 
@@ -91,27 +97,27 @@ const Finding_id=({history, mm,ss})=>{
 
                 <div className='middle_Box'>
                     <div className='middle_BoxH'>
-                        회원 정보에 등록한 이름과 이메일을 입력해주세요.
+                      <div style={{marginLeft:'20px'}}>
+                        회원 정보에 등록한 이름과 이메일을 입력해주세요.</div>
                     </div>
 
                 <div className='virtual_Box'>
                     <div className='middle_BoxN'>
-                      <div className='middle_BoxNtext' style={{marginRight:'25px',alignContent:'center'}}>
+                      <div className='middle_BoxNtext' style={{alignContent:'center',marginLeft:'20px'}}>
                         이름
                         </div>
                         <Input placeholder=" " 
-                        style={{width:'265px', height:'30px', marginRight:'122px'}}
+                        style={{width:'265px', height:'30px',marginLeft:'15px'}}
                         />
                     </div>
 
                     <div className='middle_BoxE'>
-                        <div  style={{marginRight:'20px'}}>이메일</div>
+                        <div  style={{marginRight:'10px'}}>이메일</div>
                         
                         <Input placeholder=" " 
-                        style={{width:'120px', height:'30px'}}
+                        style={{width:'115px', height:'30px'}}
                         /> &nbsp; @ &nbsp;
                         
-
                         <AutoComplete
                             style={{
                               width: 120, height:30
@@ -123,16 +129,6 @@ const Finding_id=({history, mm,ss})=>{
                             }
                           />                     
 
-                            <Button block
-                            style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center',alignItems:'center'
-                            , marginLeft:'10px',borderRadius:'5px',marginRight:'30px'}}
-                            >인증번호 받기</Button>
-                    </div>
-                    <div className='middle_BoxT'>
-                    <Input placeholder=" " 
-                        style={{width:'270px', height:'30px', marginLeft:'15px', marginRight:'15px'}}
-                        />
-                        {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
                     </div>
 
                     </div>
@@ -141,7 +137,7 @@ const Finding_id=({history, mm,ss})=>{
                     <Button bold
                     onClick={()=> {history.push('./Finding_id2')}}
                             style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
-                            , marginRight:'65px',borderRadius:'5px'}}
+                            ,borderRadius:'5px', marginLeft:'5px'}}
                             >확인</Button>
                     </div>
                     

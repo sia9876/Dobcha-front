@@ -3,8 +3,11 @@ import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./R_Done.css";
 import logo from '../images/dobcha_logo.png'
+import { FileProtectOutlined } from "@ant-design/icons";
+import { Divider, Button } from 'antd'
 
-/*return (
+const R_Done = ({history}) =>{
+return (
     <div className='frame'>
         <div className="top2">
             <Button style={{
@@ -28,7 +31,7 @@ import logo from '../images/dobcha_logo.png'
                         fontWeight: "bold"
                     }}>
                     {" "}
-                    기부 {/* 기부 페이지 생기면 경로 바꾸기}{""}
+                    기부 {/*기부 페이지 생기면 경로 바꾸기*/}{""}
                 </a>
 
                 <a
@@ -43,7 +46,7 @@ import logo from '../images/dobcha_logo.png'
                         fontWeight: "bold"
                     }}>
                     {" "}
-                    봉사활동 {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기}{" "}
+                    봉사활동 {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기*/}{" "}
                 </a>
                 <a
                     onClick={() => {
@@ -57,7 +60,7 @@ import logo from '../images/dobcha_logo.png'
                         fontWeight: "bold"
                     }}>
                     {" "}
-                    플랫폼 소개 {/* 플랫폼 소개 페이지를 만들게 되면 경로 바꾸기}{" "}
+                    플랫폼 소개 {/* 플랫폼 소개 페이지를 만들게 되면 경로 바꾸기*/}{" "}
                 </a>
             </div>
             <div className="btn">
@@ -92,7 +95,7 @@ import logo from '../images/dobcha_logo.png'
                     }}>
                     회원가입{" "}
                 </Button>
-                {/* 회원가입 페이지로 경로 바꾸기}
+                {/* 회원가입 페이지로 경로 바꾸기*/}
             </div>
         </div>
         <Divider/>
@@ -109,7 +112,11 @@ import logo from '../images/dobcha_logo.png'
         <div className="content">
         <div className="ag">
             <div className="in">
-            /*주석되는거야? 안되는데....?
+                    <h1 align-content='center'>회원 가입 완료! 더 나은 세상을 위해 돕차와 함께해주세요!</h1>
+                    <h3 align-content='center'>기업 회원의 경우 가입 승인까지 최대 14일이 소요될 수 있습니다.</h3>
+                    <Button onClick = {()=>{history.push('/login/Login')}}>
+                        로그인하러가기</Button>
+    
             </div>
         </div>
         </div>
@@ -135,6 +142,6 @@ import logo from '../images/dobcha_logo.png'
 
         </div>
     </div>
-)*/
-
-//export default R_Done;
+)
+        }
+  export default R_Done;
