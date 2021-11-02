@@ -252,7 +252,7 @@ const Agency_R =({history}) => {
                     
                     <Form.Item >
                         < Button type="primary" htmlType="submit" >
-                            가입을 어떻게 해야하냐
+                            가입하기
                     
                         </Button>
                     </Form.Item>
