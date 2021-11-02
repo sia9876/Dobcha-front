@@ -1,14 +1,16 @@
 import React from  'react'
-import './Main.css';
-import { Divider,  Button, Carousel, Menu, Dropdown} from 'antd';
+import './Done.css';
+import { Divider,  Button, Carousel, Menu, Dropdown, Card} from 'antd';
 import logo from '../images/dobcha_logo.png';
+
+
 import img_banner1 from '../images/img_banner1.png';
 import img_banner2 from '../images/img_banner2.png';
 import img_donation from '../images/img_donation.png';
 import img_volunteer from '../images/img_volunteer.png';
 
-
-const Main=({history}) => {
+const { Meta } = Card;
+const Done=({history}) => {
 
       
   
@@ -24,7 +26,7 @@ const Main=({history}) => {
                 <a onClick={() => {history.push('/main/Doing')}} 
                  style={{padding:'10px',marginLeft:'20px',marginRight:'20px',
                      color:'#000000' , fontSize:'17px', fontWeight:'bold' 
-                }}> 진행중인 기부 </a>
+                }}> 진행중인 기부  {/* 진행중인 기부 페이지로 경로 바꾸기*/} </a>
 
                  
                 <a onClick={() => {history.push('/main/Done')}} 
@@ -48,38 +50,24 @@ const Main=({history}) => {
             </div>
             <Divider/>
 
-
-
             <div className='main_middle'>
-                <div className='main_banner'>
-                            <Carousel autoplay>
-                <div>
-                <img src={img_banner1} alt="img_banner1"/>{/* 경로 추가하기 누르면 해당 기부 페이지로 이동바꾸기*/}
-                </div>
-                <div>
-                <img src={img_banner2} alt="img_banner2"/>{/* 경로 추가하기 누르면 해당 기부 페이지로 이동바꾸기*/}
-                </div>
-                
-            </Carousel>
-                </div>
 
 
 
-                <div className='main_donation'>
-                    <Button style={{ border:'none'}}
-                        ><img src={img_donation} alt ="btn_donation" 
-                                onClick ={( )=> {history.push('./')}} /* 기부메뉴(Donation_Menu) 경로 바꾸기*/
-                                /></Button>
+                <div className='donation'>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                    >
+                <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+               
                 </div>
 {/** 나중에 main_donation, main_volunteer 부분 css 바꾸기!! 등록된 종류가 늘어나면...결론: 백엔드와 같이 상의 */}
+                
+                
 
-                <div className='main_volunteer'>
-                <Button style={{ border:'none'}}
-                    ><img src={img_volunteer} alt ="btn_volunteer" 
-                            onClick ={( )=> {history.push('./hompage/Volunteer')}}
-                            /></Button>
-                </div>
-            </div>
 
 
 
@@ -92,9 +80,10 @@ const Main=({history}) => {
   Dobcha ©2021
             </div>
         </div>
+        </div>
     )
 }
 
 
 
-export default Main;
+export default Done;

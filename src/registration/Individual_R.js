@@ -33,100 +33,54 @@ const Individual_R =({history}) => {
     value: website,
   }));
     return(
-        <div className="frame">
-            <div className="top2">
-                <Button style={{ border: "none" }}><img src={logo} alt="dobcha_logo"
-                    onClick={() => { history.push('/'); } } /></Button>
-                <div className="click">
-                    <a
-                        onClick={() => {
-                            history.push("/");
-                        } }
-                        style={{
-                            padding: "15px",
-                            marginRight: "50px",
-                            color: "#000000",
-                            fontSize: "17px",
-                            fontWeight: "bold"
-                        }}
-                    >
-                        {" "}
-                        기부 {/* 기부 페이지 생기면 경로 바꾸기*/}{" "}
-                    </a>
+        <div className='main_frame'>
+            <div className='main_top'>
+                <Button style={{ border:'none'}}
+                    ><img src={logo} alt ="dobcha_logo" 
+                            onClick ={( )=> {history.push('/')}}
+                            /></Button>
+                <div className='main_click'>
+                
+                <a onClick={() => {history.push('/')}} 
+                 style={{padding:'10px',marginLeft:'20px',marginRight:'20px',
+                     color:'#000000' , fontSize:'17px', fontWeight:'bold' 
+                }}> 진행중인 기부  {/* 진행중인 기부 페이지로 경로 바꾸기*/} </a>
 
-                    <a
-                        onClick={() => {
-                            history.push("/");
-                        } }
-                        style={{
-                            padding: "15px",
-                            marginRight: "30px",
-                            color: "#000000",
-                            fontSize: "17px",
-                            fontWeight: "bold"
-                        }}
-                    >
-                        {" "}
-                        봉사활동 {/* 봉사활동 페이지를 만들게 되면 경로 바꾸기*/}{" "}
-                    </a>
-                    <a
-                        onClick={() => {
-                            history.push("/");
-                        } }
-                        style={{
-                            padding: "15px",
-                            marginLeft: "20px",
-                            color: "#000000",
-                            fontSize: "17px",
-                            fontWeight: "bold"
-                        }}
-                    >
-                        {" "}
-                        플랫폼 소개 {/* 플랫폼 소개 페이지를 만들게 되면 경로 바꾸기*/}{" "}
-                    </a>
+                 
+                <a onClick={() => {history.push('/')}} 
+                 style={{padding:'10px', marginRight:'20px',marginLeft:'20px',
+                     color:'#000000' , fontSize:'17px', fontWeight:'bold' 
+                }}> 마감된 기부 {/* 마감된 기부 페이지로 경로 바꾸기*/} </a>
                 </div>
-                <div className="btn">
-                    <Button
-                        block
-                        style={{
-                            display: "flex",
-                            width: "100px",
-                            height: "30px",
-                            justifyContent: "center",
-                            borderRadius: "5px",
-                            marginTop: "15px",
-                            marginRight: "15px"
-                        }}
-                        onClick={() => {
-                            history.push("/login/Login");
-                        } }
-                    >
-                        로그인
-                    </Button>
-                    <Button
-                        block
-                        style={{
-                            display: "flex",
-                            width: "100px",
-                            height: "30px",
-                            justifyContent: "center",
-                            borderRadius: "5px",
-                            marginTop: "15px"
-                        }}
-                        onClick={() => {
-                            history.push("/registration/Registration");
-                        } }
-                    >
-                        회원가입{" "}
-                    </Button>
-                    {/* 회원가입 페이지로 경로 바꾸기*/}
+
+                <div className='main_btn'>
+                    <Button block 
+                    style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
+                    ,borderRadius:'5px', marginTop:'10px', marginRight:'15px'}}
+                    onClick={()=> {history.push('/login/Login')}}
+                    >로그인</Button>
+                    <Button block 
+                    style={{display:'flex',width: '100px', height: '30px', justifyContent: 'center'
+                    ,borderRadius:'5px', marginTop:'10px'}}
+                    onClick={()=> {history.push('/registration/Registration')}}
+                    >회원가입 </Button>
                 </div>
             </div>
-            <Divider />
+            <Divider/>
 
             <div className="content">
-                <div className="step"></div>
+                <div className="step">
+                
+
+                    <div className="step1"><h2>회원 구분 선택</h2></div>
+                    <Divider type="vertical"/>
+                    <div className="step2"><h2 style={{color:'red'}}>회원 정보 입력</h2></div>
+                    <Divider type="vertical"/>
+                    <div className="step3"><h2>회원 가입 완료</h2></div>
+
+                </div>
                 <Divider />
+                <div className="ag">
                 <Form
                     form={form}
                     name="register"
@@ -134,23 +88,21 @@ const Individual_R =({history}) => {
                     scrollToFirstError
                 >
                 <div className="form">
-                    <div className="in">
+                    
                 
-                        < Form.Item
-                            name="e-mail"
-                            label="E-Mail"
+                <Form.Item
+                            name="id"
+                            label="아이디"
                             rules={[
-                        {
-                            type: 'email',
-                            message: '이메일을 입력하세요',
-                        },
+                       
                         {
                             required: true,
-                            message: '이메일을 입력하시오.',
+                            message: '아이디를 입력하십시오',
                         },
                         ]}
                         >
                         <Input />
+                    </Form.Item>
                         <Form.Item
                             name="password"
                             label="비밀번호"
@@ -189,12 +141,12 @@ const Individual_R =({history}) => {
                     <Input.Password />
                     </Form.Item>
                     <Form.Item
-                        name="Agency_Name"
-                        label="단체(법인)명"
+                        name="userName"
+                        label="이름"
                         rules={[
                         {
                             required: true,
-                            message: '단체명을 입력하십시오.',
+                            message: '이름을 입력하십시오',
                             whitespace: true,
                         },
                         ]}
@@ -203,11 +155,11 @@ const Individual_R =({history}) => {
                     </Form.Item>
                     <Form.Item
                         name="phone"
-                        label="전화번호"
+                        label="휴대폰번호"
                         rules={[
                         {
                             required: true,
-                            message: '전화번호를 입력하세요',
+                            message: '휴대폰번호를 입력하세요("-"없이 입력해주세요)',
                         },
                         ]}
                     >
@@ -217,22 +169,22 @@ const Individual_R =({history}) => {
                         }}
                         />
                     </Form.Item>
-
                     <Form.Item
-                        name="website"
-                        label="Website"
-                        rules={[
+                            name="email"
+                            label="E-Mail주소"
+                            rules={[
+                        {
+                            type: 'email',
+                            message: '이메일 주소를 입력하십시오',
+                        },
                         {
                             required: true,
-                            message: '단체(법인) 사이트를 입력하세요',
+                            message: '이메일 주소를 입력하십시오',
                         },
                         ]}
-                    >
-                        <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
+                        >
                         <Input />
-                        </AutoComplete>
                     </Form.Item>
-                    
                     <Form.Item
                         name="agreement"
                         valuePropName="checked"
@@ -251,18 +203,18 @@ const Individual_R =({history}) => {
                     
                     
                     <Form.Item >
-                        <Button type="primary" htmlType="submit"
-                        onClick={()=>{history.push("/registration/R_Done")}}>
-                        가입하기
+                        < Button type="primary" htmlType="submit" >
+                            가입을 어떻게 해야하냐
+                    
                         </Button>
                     </Form.Item>
-                    </Form.Item>
+                    
                     
                     </div>
-                    </div>
+                    
             </Form>
             </div>
-           
+           </div>
             
         
         

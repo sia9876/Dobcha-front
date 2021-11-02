@@ -2,6 +2,8 @@ import './App.css';
 import { BrowserRouter as Router, Route }  from 'react-router-dom';
 import Login from './login/Login';
 import Main from './main/Main';
+import Doing from './main/Doing';
+import Done from './main/Done';
 import Agency from './main/Agency';
 import Individual from './main/Individual';
 import Volunteer from './main/Volunteer';
@@ -23,8 +25,10 @@ const App = () => {
     <Router>
       <Route path ='/' exact component = {Main}/>
       <Route path ='/main/Volunteer' exact component = {Volunteer}/>
-      <Route path ='/hompage/Agency' exact component = {Agency}/>
-      <Route path ='/hompage/Individual' exact component = {Individual}/>
+      <Route path ='/main/Agency' exact component = {Agency}/>
+      <Route path ='/main/Individual' exact component = {Individual}/>
+      <Route path ='/main/Doing' exact component = {Doing}/>
+      <Route path ='/main/Done' exact component = {Done}/>
       <Route path ='/login/Login' exact component = {Login}/>
       <Route path ='/login/Finding_id' exact component = {Finding_id}/>
       <Route path ='/login/Finding_id2' exact component = {Finding_id2}/>
