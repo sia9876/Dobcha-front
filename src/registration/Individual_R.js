@@ -20,17 +20,17 @@ const Individual_R =({history}) => {
 
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
-  const onWebsiteChange = (value) => {
+  const onEmailChange = (value) => {
     if (!value) {
       setAutoCompleteResult([]);
     } else {
-      setAutoCompleteResult(['.com', '.net', '.co.kr'].map((domain) => `${value}${domain}`));
+      setAutoCompleteResult(['@naver.com', '@google.com', '@daum.net'].map((domain) => `${value}${domain}`));
     }
   };
 
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
+  const emailOptions = autoCompleteResult.map((email) => ({
+    label: email,
+    value: email,
   }));
     return(
         <div className='main_frame'>
@@ -183,7 +183,10 @@ const Individual_R =({history}) => {
                         },
                         ]}
                         >
+                        <AutoComplete options={emailOptions} onChange={onEmailChange} placeholder="email">
                         <Input />
+                        </AutoComplete>
+                        
                     </Form.Item>
                     <Form.Item
                         name="agreement"
