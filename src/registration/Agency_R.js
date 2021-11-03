@@ -4,12 +4,9 @@ import React, {useEffect, useState} from 'react'
 import "antd/dist/antd.css";
 import "./Agency_R.css";
 import { Divider, Button } from "antd";
-import { Form, Input, InputNumber, Select, Checkbox, AutoComplete } from 'antd';
+import { Form, Input, InputNumber, Select, Checkbox, AutoComplete, Upload, message } from 'antd';
 import logo from '../images/dobcha_logo.png';
-import FormItem from "antd/lib/form/FormItem";
-import FormItemLabel from "antd/lib/form/FormItemLabel";
-import { Redirect } from "react-router";
-import { BrowserRouter as Router, Route }  from 'react-router-dom'
+import { UploadOutlined } from '@ant-design/icons';
 
 const { options } = Select;
 
@@ -18,7 +15,30 @@ const Agency_R =({history}) => {
   
  
   const [form] = Form.useForm();
- 
+  const props = {
+    name: 'file',
+    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    headers: {
+      authorization: 'authorization-text',
+    },
+    onChange(info) {
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+    defaultFileList: [
+        {
+          uid: '1',
+          status: 'done',
+          response: 'Server Error 500', // custom error message to show
+          src: {logo}
+        },] // png db에서 가져오는 식으로 코드 바꾸기 => 임의로 사진 설정
+  };
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
@@ -218,6 +238,17 @@ const Agency_R =({history}) => {
                         >
                         <Input />
                     </Form.Item>
+                    <Form.Item
+                        name="file"
+                        label="기관 서류 등록"
+                        rules={
+                        <Upload {...props}>
+                        <Button style={{display:'flex',width: '120px', marginLeft:'28px',height: '30px', justifyContent: 'center'
+                    ,borderRadius:'5px', marginRight:'10px', marginTop:'20px'}} icon={<UploadOutlined style={{fontSize:"15px"
+                        }}/>}> File Upload
+                        </Button>
+                        </Upload>}>
+                        </Form.Item>
                     <Form.Item
                         name="website"
                         label="Website"

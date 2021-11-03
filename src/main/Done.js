@@ -1,6 +1,6 @@
 import React from  'react'
 import './Done.css';
-import { Divider,  Button, Carousel, Menu, Dropdown, Card} from 'antd';
+import { Divider,  Button, Carousel, Menu, Dropdown, Card, Col, Row} from 'antd';
 import logo from '../images/dobcha_logo.png';
 
 
@@ -51,17 +51,39 @@ const Done=({history}) => {
             <Divider/>
 
             <div className='main_middle'>
+            <Row gutter={32}>
+                    <Col span={8}>
+                 <Card
+                    hoverable
+                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                    
+                    bordered={false}>
+                    <Meta title="Europe Street beat" description="www.instagram.com" />
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card hoverable
+                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                    
+                    bordered={false}>
+                    <Meta title="Europe Street beat" description="www.instagram.com" />
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card hoverable
+                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                    
+                    bordered={false}
+                    onClick={()=> {history.push()}}>
+                    <Meta title="Europe Street beat" description="www.instagram.com" />
+                    </Card>
+                </Col>
+                </Row>
 
 
 
                 <div className='donation'>
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                    >
-                <Meta title="Europe Street beat" description="www.instagram.com" />
-                </Card>
+                
                
                 </div>
 {/** 나중에 main_donation, main_volunteer 부분 css 바꾸기!! 등록된 종류가 늘어나면...결론: 백엔드와 같이 상의 */}
